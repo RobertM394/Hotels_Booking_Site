@@ -42,13 +42,7 @@
     		<input type="text" class="input-sm form-control" id="checkOutDate" name="checkOutDate" placeholder="6/07/2021" />
 		 </div>
 		 <br>
-	             
-      <script type="text/javascript">
-      $('#datepicker').datepicker({ 
-    	  orientation: "top auto"
-      });
-      </script>
-       
+	                  
          <button class="button button1" id="submit" type="submit">Search</button> <br />
          <p id="invalidInput" style="display:none; text-align: center; color:#ed2939"> Please ensure you have entered a valid city name and check in and check out dates. </p> 
          <p style="text-align: center; color: #ed2939;" th:text="${no_results} ? 'Sorry, no available hotels were found. Please try a different city or date range.' : '' "> </p>
@@ -62,3 +56,7 @@
 <!--  Place footer outside of <body> tags -->  
 <div th:replace="fragments :: footer" class="text-center"></div>
 </html>
+<!-- 
+References
+https://bootstrap-datepicker.readthedocs.io/en/latest/
+ -->

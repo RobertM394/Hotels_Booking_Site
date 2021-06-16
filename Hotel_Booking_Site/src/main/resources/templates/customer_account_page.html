@@ -44,24 +44,22 @@
    <input type="hidden" name="booking_id" th:value=${bookingInfo.booking.getId()}>
    <input type="hidden" name="customer_id" th:value=${customer.getId()}>
    
-   <!-- Opens confirmation modal -->
-   <button type="button" class="btn btn-danger btn-lg button6" data-toggle="modal" data-target="#confirmModal">Cancel Booking </button>
-   
-  <div class="modal fade" id="confirmModal" role="dialog">
-    <div class="modal-dialog">  
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Are you sure you want to cancel your booking?</h4>
-        </div>
-        <div class="modal-body">
-           <button type="submit" class="btn btn-danger button7">Yes</button>
-           <button type="button" class="button button8" data-dismiss="modal">No</button>
-        </div>
-      </div>   
-    </div>
-  </div>
-   </form>
+   <button type="button" class="btn-danger btn-lg button6" data-toggle="modal" data-target="#confirmModal">Cancel Booking</button>
+					<div class="modal fade" id="confirmModal">
+						<div class="modal-dialog">
+							<div class="modal-content">
+							<div class="modal-header">
+								<h4 class="modal-title">Are you sure you want to cancel your booking?</h4>
+							</div>
+							<div class="modal-body">
+								<button type="submit" class="btn-danger button7">Yes</button>
+								<button type="button" class="button button8" data-dismiss="modal">No</button>
+							</div>
+						</div>
+					</div>
+					</div>
+
+				</form>
    
    </div>
 </div>
