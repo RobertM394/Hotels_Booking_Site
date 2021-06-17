@@ -83,12 +83,12 @@ public class HotelsRestControllerTest {
 		//AvailableRoomsService MockBean will return roomInfoList when called 
 		//by REST controller. If REST controller is working correctly, calling 
 		//its API route should return roomInfoList in JSON format
-		given(availableRoomsService.getAvailableRooms("Monterey", checkIn, checkOut)).willReturn(roomInfoList);
-		given(availableRoomsService.getAvailableRooms("InvalidCity", checkIn, checkOut)).willReturn(null);
+		given(availableRoomsService.getAvailableRooms("Monterey", checkIn, checkOut, 1)).willReturn(roomInfoList);
+		given(availableRoomsService.getAvailableRooms("InvalidCity", checkIn, checkOut, 1)).willReturn(null);
 		
 		//Simulate HTTP GET requests to API route for valid and invalid city names
-		MockHttpServletResponse response = mockMvc.perform(get("/hotels/api/getRooms/?city=Monterey&checkInDate=06/01/2022&checkOutDate=06/07/2021")).andReturn().getResponse();
-		MockHttpServletResponse notFoundResponse = mockMvc.perform(get("/hotels/api/getRooms/?city=InvalidCity&checkInDate=06/01/2022&checkOutDate=06/07/2021")).andReturn().getResponse();
+		MockHttpServletResponse response = mockMvc.perform(get("/hotels/api/getRooms/?city=Monterey&checkInDate=06/01/2022&checkOutDate=06/07/2021&occupants=1")).andReturn().getResponse();
+		MockHttpServletResponse notFoundResponse = mockMvc.perform(get("/hotels/api/getRooms/?city=InvalidCity&checkInDate=06/01/2022&checkOutDate=06/07/2021&occupants=1")).andReturn().getResponse();
 		
 		//Convert HTTP response in JSON to RoomInfo list and get status code of search when city name is not found
 		List<RoomInfo> actualResult = jsonRoomInfoListAttempt.parseObject(response.getContentAsString());

@@ -13,7 +13,7 @@ import org.springframework.data.jpa.repository.Query;
 public interface RoomsRepository extends JpaRepository<Room, String> {
 	
 	@Query
-	List<Room> findAvailableRooms(String cityName, Date checkInDate, Date checkOutDate); 
+	List<Room> findAvailableRooms(String cityName, Date checkInDate, Date checkOutDate, int numberOccupants); 
 	
 	@Query
 	List<Room> findByCityName(String cityName); 

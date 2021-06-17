@@ -18,7 +18,7 @@ import javax.persistence.Table;
  */
 @NamedNativeQuery(name = "Room.findAvailableRooms",
 	query = "SELECT r.id, r.hotel_id, r.price_per_night, r.max_occupants, r.bed_type, r.number_of_beds "
-			+ "FROM rooms r JOIN hotels_table h ON r.hotel_id = h.id WHERE h.city = ?1 "
+			+ "FROM rooms r JOIN hotels_table h ON r.hotel_id = h.id WHERE h.city = ?1 AND ?4 <= r.max_occupants "
 			+ "AND r.id NOT IN (SELECT b.room_id FROM bookings b WHERE"
 			+ "(?2 >= b.check_in_date AND ?2 < b.check_out_date)"
 			+ "OR"

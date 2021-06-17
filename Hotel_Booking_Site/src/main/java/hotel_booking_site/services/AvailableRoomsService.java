@@ -25,10 +25,10 @@ public class AvailableRoomsService {
 	
 	//retrieve a list of RoomInfo objects with room and hotel information
 	//representing the available rooms according to the user's search parameters
-	public List<RoomInfo> getAvailableRooms(String cityName, Date checkInDate, Date checkOutDate) {
+	public List<RoomInfo> getAvailableRooms(String cityName, Date checkInDate, Date checkOutDate, int numberOccupants) {
 		
 		List<RoomInfo> roomInfoList = new ArrayList<>();
-		List<Room> rooms = roomsRepository.findAvailableRooms(cityName, checkInDate, checkOutDate);
+		List<Room> rooms = roomsRepository.findAvailableRooms(cityName, checkInDate, checkOutDate, numberOccupants);
 		
 		if (rooms.size() < 1) {
 			return null;

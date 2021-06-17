@@ -67,16 +67,16 @@ public class AvailableRoomsServiceTest {
 		rooms.add(room);
 	
 		//create stubs for values returned from database by repository classes
-		given(roomsRepository.findAvailableRooms("Las Vegas", checkIn, checkOut)).willReturn(rooms);
-		given(roomsRepository.findAvailableRooms("InvalidCityName", checkIn, checkOut)).willReturn(emptyList);
+		given(roomsRepository.findAvailableRooms("Las Vegas", checkIn, checkOut, 1)).willReturn(rooms);
+		given(roomsRepository.findAvailableRooms("InvalidCityName", checkIn, checkOut, 1)).willReturn(emptyList);
 		given(hotelsRepository.findById(1)).willReturn(hotel);
 		
 		//expected RoomInfo and RoomInfoList objects
 		RoomInfo roomInfo = new RoomInfo(room, hotel);
 		roomInfoListExpectedResult.add(roomInfo);
 		
-		List<RoomInfo> roomInfoListActualResult = availableRoomsService.getAvailableRooms("Las Vegas", checkIn, checkOut);
-		List<RoomInfo> noRoomsFoundResult = availableRoomsService.getAvailableRooms("InvalidCityName", checkIn, checkOut);
+		List<RoomInfo> roomInfoListActualResult = availableRoomsService.getAvailableRooms("Las Vegas", checkIn, checkOut, 1);
+		List<RoomInfo> noRoomsFoundResult = availableRoomsService.getAvailableRooms("InvalidCityName", checkIn, checkOut, 1);
 
 		assertThat(roomInfoListExpectedResult).isEqualTo(roomInfoListActualResult);
 		assertEquals(null, noRoomsFoundResult);

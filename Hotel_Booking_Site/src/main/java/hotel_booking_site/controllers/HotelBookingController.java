@@ -83,7 +83,7 @@ public class HotelBookingController {
 		model.addAttribute("numberOccupants", numberOccupants);
 		
 		//Query database to find available rooms
-		List<RoomInfo> roomInfoList = availableRoomsService.getAvailableRooms(city, sqlCheckInDate, sqlCheckOutDate);
+		List<RoomInfo> roomInfoList = availableRoomsService.getAvailableRooms(city, sqlCheckInDate, sqlCheckOutDate, numberOccupants);
 		
 		if (roomInfoList == null) {
 			String no_rooms_found = "Sorry, no available rooms where found. Please try "
