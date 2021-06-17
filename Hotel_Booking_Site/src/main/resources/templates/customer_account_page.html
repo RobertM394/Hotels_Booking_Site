@@ -14,7 +14,7 @@
  
  <h5 th:inline="text"> Name: <span th:text=${customer.getFirst_name()}></span> <span th:text=${customer.getLast_name()}></span> </h5>
  <h5 th:inline="text"> Email: <span th:text=${customer.getEmail()}></span> </h5>
- <h5 th:inline="text"> Your Account Balance: <span th:text=${customer.getCurrent_balance()}></span> </h5>
+ <h5 th:inline="text"> Your Account Balance: $<span th:text=${customer.getCurrent_balance()}></span> </h5>
  <br /> 
   
  <h3 th:inline="text"> My Bookings </h3>    
@@ -24,12 +24,12 @@
  
  <div class = "booking_item booking_item_1">
  <h4 th:inline="text"><span th:text=${bookingInfo.hotel.getName()}></span> </h4>
-    				<tr>
-   					<td th:text="${bookingInfo.hotel.getStreet_address()}"></td>,
-   					<td th:text="${bookingInfo.hotel.getState()}"></td>,
-   					<td th:text="${bookingInfo.hotel.getZip_code()}"></td>,
-   					<td th:text="${bookingInfo.hotel.getCountry()}"></td>
-   					</tr>
+               <tr>
+                  <td th:text="${bookingInfo.hotel.getStreet_address()}"></td>,
+                  <td th:text="${bookingInfo.hotel.getState()}"></td>,
+                  <td th:text="${bookingInfo.hotel.getZip_code()}"></td>,
+                  <td th:text="${bookingInfo.hotel.getCountry()}"></td>
+                  </tr>
  <h5 th:inline="text"><span th:text=${bookingInfo.hotel.getPhone()}></span> </h5>
  
  </div>
@@ -44,10 +44,21 @@
    <input type="hidden" name="booking_id" th:value=${bookingInfo.booking.getId()}>
    <input type="hidden" name="customer_id" th:value=${customer.getId()}>
    
-   <!--  Jason can you add a Bootstrap modal asking if the customer is sure they want to cancel the booking? If yes then use this existing button as the "cancel" option button. -->
-   <button type="submit" class="btn btn-danger">Cancel Booking </button>
-   </form>
-   
+   <button type="button" class="btn-danger btn-lg button6" data-toggle="modal" data-target="#confirmModal">Cancel Booking</button>
+               <div class="modal fade" id="confirmModal">
+                  <div class="modal-dialog">
+                     <div class="modal-content">
+                     <div class="modal-header">
+                        <h4 class="modal-title">Are you sure you want to cancel this booking?</h4>
+                     </div>
+                     <div class="modal-body">
+                        <button type="submit" class="btn-danger button7">Yes</button>
+                        <button type="button" class="button button8" data-dismiss="modal">No</button>
+                     </div>
+                  </div>
+               </div>
+               </div>
+            </form>
    </div>
 </div>
 
@@ -60,3 +71,8 @@
 </body>
 <div th:replace="fragments :: footer" class="text-center"></div>
 </html>
+
+<!-- 
+References
+Modal example: https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_modal&stacked=h
+ -->

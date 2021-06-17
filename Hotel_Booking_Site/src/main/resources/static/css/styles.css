@@ -3,27 +3,31 @@
 selector
  */
  
+.nav_bar_right{
+   float:right;
+}
+ 
 .login, .signup{
-	text-align:center;
+   text-align:center;
 }
 
 /* Optimize later using class selectors*/
 .main{
-	width:800px;
-	height:1000px;
-	margin:auto;
-	overflow:visible;
-	
+   width:800px;
+   height:1000px;
+   margin:auto;
+   overflow:visible;
+   
 }
 .listings {
   display: flex;
-  	width:800px;
-	height:260px;
-	margin:auto;
-	border-bottom: 1px solid black;
-	overflow:visible;
-	background-color: white;;
-	align-content: center;
+   width:800px;
+   height:260px;
+   margin:auto;
+   border-bottom: 1px solid black;
+   overflow:visible;
+   background-color: white;;
+   align-content: center;
 }
 .listing_image {
   display: flex;
@@ -41,133 +45,154 @@ selector
  
 }
 .img_temp{
-	border-radius: 15px;
-	height:100%;
-	width: 100%;
-	object-fit: cover;
+   border-radius: 15px;
+   height:100%;
+   width: 100%;
+   object-fit: cover;
 }
 .listing_content{
-	margin-left:15px;	
+   margin-left:15px; 
 }
 
 .listing_text{
-	color: gray;
-	font-size: medium;
+   color: gray;
+   font-size: medium;
 }
 
 .listing_corner{
-	
-	margin-right:0px;
-	margin-top:20px;
-	font-weight: bold;
-	font-size: 18px;
-	margin-left: auto; 
-	margin-right: 0;
-	text-align: right;
+   
+   margin-right:0px;
+   margin-top:20px;
+   font-weight: bold;
+   font-size: 18px;
+   margin-left: auto; 
+   margin-right: 0;
+   text-align: right;
 }
 
 .button{
-	background-color: #156bc1;
-	color: white;
-	border-radius: 34px;
-	padding: 10px 15px;	
-	border: none;	
+   background-color: #156bc1;
+   color: white;
+   border-radius: 34px;
+   padding: 10px 15px;  
+   border: none;  
 }
 
 .listing_hotel_name{
-	color: black;
+   color: black;
 }
 
 .booking-container{
-	display: flex;
-	background-color: #F8F8F8;
-	width: 650px;
-	border-radius: 34px;
-	margin-top: 20px;	
+   display: flex;
+   background-color: #F8F8F8;
+   width: 650px;
+   border-radius: 34px;
+   margin-top: 20px; 
 }
 
 .booking_item {
-	width: 200px;
-	margin: 10px;
+   width: 200px;
+   margin: 10px;
 }
 
 .booking_item_1{
-	min-height: 100px;
-	min-width: 400px;	
+   min-height: 100px;
+   min-width: 400px; 
 }
 
 .booking_item_2{
-	min-height: 100px;
-	text-align: right;
-	
+   min-height: 100px;
+   text-align: right;
+   
 }
 
 .btn-danger{
-	color: white;
-	border-radius: 34px;
-	padding: 10px 15px;	
-	border: none;	
+   color: white;
+   border-radius: 34px;
+   padding: 10px 15px;  
+   border: none;  
 }
 
 .total_price{
-	font-weight: bold;	
+   font-weight: bold;   
 }
 
 .moreInfo{
-	color:blue;
+   color:blue;
 }
 
 .homepage_image{
-	display:flex;
-	text-align: center;
-	min-width: 1200px;
-	min-height: 600px;
-	background-image: url("/img/las_vegas.jpg");
-	background-size: 100% 100%;
-	background-repeat: no repeat;
-	justify-content: center;
-	
+   display:flex;
+   text-align: center;
+   min-width: 1200px;
+   min-height: 600px;
+   background-image: url("/img/las_vegas.jpg");
+   background-size: 100% 100%;
+   background-repeat: no repeat;
+   justify-content: center;
+   
 }
 .homepage_searchbar{
-	display: flex;
-	min-width: 600px;
-	height: 250px;
-	background-color: white;
-	margin-top: 25px;
-	border-radius: 34px;
-	flex-direction: column;	
+   display: flex;
+   min-width: 600px;
+   height: 250px;
+   background-color: white;
+   margin-top: 25px;
+   border-radius: 34px;
+   flex-direction: column; 
 }
 
 .searchbar_item_1{
-	min-width:600px;
-	min-height:50px;
-	color: #D32F2F;
-	font-weight: bolder;
-	border-bottom: 1px solid black;
+   min-width:600px;
+   min-height:50px;
+   color: #D32F2F;
+   font-weight: bolder;
+   border-bottom: 1px solid black;
 }
 
 
 .searchbar_item_2{
-	color:gray;
-	min-width:600px;
-	min-height:200px;
-	border-radius: 34px;
-	text-align:left;
-	margin-left: 25px;
-	margin-top: 15px;
+   color:gray;
+   min-width:600px;
+   min-height:200px;
+   border-radius: 34px;
+   text-align:left;
+   margin-left: 25px;
+   margin-top: 15px;
 }
 
 .input-group{
-	width: 200px !important;
-	height: 25px !important;
+   width: 200px !important;
+   height: 25px !important;
 }
 
 .form-control{
-	width: 200px !important;
-	height: 30px !important;	
+   width: 200px !important;
+   height: 30px !important;   
+}
+
+.modal {
+  text-align: center;
+  padding: 0!important;
+}
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.modal-dialog {
+  width: 500px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.button7, .button8 {
+   width: 100px;
+   font-size: 16px;     
 }
 
 h1{
-	text-align:center;
+   text-align:center;
 }
-

@@ -59,7 +59,7 @@ $(document).ready(function(){
     
       <form id="inputForm" action="/hotels/submitNewCustomerBooking" method="POST">
       <input type="hidden" name="roomId" th:value=${roomId}>
-      <input type="hidden" name="numberOccupants" value=4>
+      <input type="hidden" name="numberOccupants" th:value=${session.occupants}>
       
          <label for="email"> Email  </label><br>
          <input type="text" id="email" name="email" placeholder="username@csumb.edu"><br>  
