@@ -93,6 +93,7 @@ public class HotelBookingController {
 			return "hotels_homepage";
 		}
 		else {
+		System.out.println("Search successful.");
 		model.addAttribute(roomInfoList);
 		return "hotel_results_page";
 		}
@@ -168,6 +169,10 @@ public class HotelBookingController {
 		
 		model.addAttribute(customer);
 		
+		System.out.println("New Customer " + booking.getCustomer_id() + 
+						   " booked room " + booking.getRoom_id() +
+				           " successfully.");
+		
 		return "booking_confirmation_page";
 	}
 	
@@ -201,6 +206,10 @@ public class HotelBookingController {
 		customer.setCurrent_balance(currentBalance);
 		model.addAttribute(customer);
 		
+		System.out.println("Existing user " + booking.getCustomer_id() + 
+						   " booked room " + booking.getRoom_id() +
+						   " successfully.");
+		
 		List<BookingInfo> bookingInfoList = newBookingService.getListOfBookingsByCustomerId(customer.getId());
 		if (bookingInfoList == null) {
 			model.addAttribute("bookings", false);
@@ -217,6 +226,8 @@ public class HotelBookingController {
 			@RequestParam("username") String username,
 			@RequestParam("password") String password
 			) {
+		
+		System.out.println("User logged in successfully.");
 		
 		Customer customer =	customerDataService.authenticateCustomer(username, password);
 		if (customer == null) {
@@ -292,6 +303,7 @@ public class HotelBookingController {
 		double currentBalance = customersRepository.returnAccountBalanceById(customer.getId());
 		customer.setCurrent_balance(currentBalance); 
 		model.addAttribute(customer);
+		System.out.println("Customer " + customer_id + " cancelled booking " + booking_id);
 		
 		List<BookingInfo> bookingInfoList = newBookingService.getListOfBookingsByCustomerId(customer.getId());
 		if (bookingInfoList == null) {
@@ -311,6 +323,7 @@ public class HotelBookingController {
 	public String removeCustomerSession(HttpSession session) {
 		session.setAttribute("authenticated", false);
 		session.invalidate();
+		System.out.println("User logged out succesfully.");
 		return "customer_login_page";
 	}
 	

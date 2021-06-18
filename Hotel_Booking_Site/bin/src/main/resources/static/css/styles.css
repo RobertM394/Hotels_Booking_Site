@@ -11,6 +11,7 @@ selector
    text-align:center;
 }
 
+/* Optimize later using class selectors*/
 .main{
    width:800px;
    height:1000px;
@@ -18,8 +19,6 @@ selector
    overflow:visible;
    
 }
-
-/* Hotel Results Page */
 .listings {
   display: flex;
    width:800px;
@@ -30,7 +29,6 @@ selector
    background-color: white;;
    align-content: center;
 }
-
 .listing_image {
   display: flex;
   flex: 0 0 200px;
@@ -40,11 +38,11 @@ selector
   margin-top:35px;
   margin-left:15px;
 }
-
 .listing_content {
   display: flex;
   flex: 1 1 0;
   margin-top:18px;
+ 
 }
 .img_temp{
    border-radius: 15px;
@@ -52,7 +50,6 @@ selector
    width: 100%;
    object-fit: cover;
 }
-
 .listing_content{
    margin-left:15px; 
 }
@@ -85,7 +82,6 @@ selector
    color: black;
 }
 
-/* My Account page */
 .booking-container{
    display: flex;
    background-color: #F8F8F8;
@@ -125,31 +121,6 @@ selector
    color:blue;
 }
 
-/* Modal */
-.modal {
-  text-align: center;
-}
-
-.modal:before {
-  content: '';
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle;
-}
-
-.modal-dialog {
-  width: 500px;
-  display: inline-block;
-  text-align: center;
-  vertical-align: middle;
-}
-
-.button7, .button8 {
-   width: 100px;
-   font-size: 16px;     
-}
-
-/* Homepage */
 .homepage_image{
    display:flex;
    text-align: center;
@@ -158,9 +129,9 @@ selector
    background-image: url("/img/las_vegas.jpg");
    background-size: 100% 100%;
    background-repeat: no repeat;
-   justify-content: center;   
+   justify-content: center;
+   
 }
-
 .homepage_searchbar{
    display: flex;
    min-width: 600px;
@@ -179,6 +150,7 @@ selector
    border-bottom: 1px solid black;
 }
 
+
 .searchbar_item_2{
    color:gray;
    min-width:600px;
@@ -189,7 +161,6 @@ selector
    margin-top: 15px;
 }
 
-/* Datepicker */
 .input-group{
    width: 200px !important;
    height: 25px !important;
@@ -198,6 +169,28 @@ selector
 .form-control{
    width: 200px !important;
    height: 30px !important;   
+}
+
+.modal {
+  text-align: center;
+  padding: 0!important;
+}
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.modal-dialog {
+  width: 500px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.button7, .button8 {
+   width: 100px;
+   font-size: 16px;     
 }
 
 h1{

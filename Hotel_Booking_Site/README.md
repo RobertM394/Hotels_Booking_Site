@@ -1,4 +1,4 @@
-#General Site design
+# General Site design
 Project Authors: 
 Robert Meis (controllers, services, repositories, database design, unit tests, front-end input validation)
 Jason Contreras (front-end HTML/CSS styling, Heroku deployment configuration, documentation)
@@ -106,3 +106,8 @@ INSERT INTO `rooms` VALUES
 (10,2,100,2,'Single',2),
 (11,2,110,4,'King',1),
 (12,2,110,4,'King',1);
+
+# Heroku Deployment 
+Database is deployed using Heroku config vars and JawsDB.
+
+Note that the project is in a subdirectory Hotel_Booking_Site. By default Heroku will always assume the project is in the root directory. To work around this, this [buildpack method](https://github.com/timanovsky/subdir-heroku-buildpack) by Alexey Timanovsky and Ed Morley is used to deploy the project from a subdirectory. Note this is solely used for Heroku deployment.
