@@ -101,4 +101,23 @@ public class CustomerDataServiceTest {
 		assertEquals(expectedResult, actualResult);
 		assertEquals(null, invalidActualResult);
 	}
+	
+	@Test
+	public void updateCustomerAccountBalanceShouldReturnTrue() {
+		
+		given(customersRepository.returnAccountBalanceById(1)).willReturn(100.00);
+		//Invalid search ID returns 0 instead of null
+		given(customersRepository.returnAccountBalanceById(0)).willReturn(0.0); 
+		
+		//Method will return true if update is successful or not found but query ran OK
+		boolean expectedResult = true;
+		boolean invalidExpectedResult = true;
+		
+		boolean actualResult = customerDataService.updateAccountBalanceById(1);
+		boolean invalidActualResult = customerDataService.updateAccountBalanceById(0);
+		
+		assertEquals(expectedResult, actualResult);
+		assertEquals(invalidExpectedResult, invalidActualResult);
+	}
+	
 }
